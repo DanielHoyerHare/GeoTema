@@ -24,8 +24,21 @@ namespace GeoTema.Views
         {
             InitializeComponent();
         }
-
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void KeyHandler1(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                LoginKode.Focus();
+            }
+        }
+        private void KeyHandler2(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Log_Ind();
+            }
+        }
+        private void Log_Ind()
         {
             ViewModels.BrugerViewModel brugerliste = new ViewModels.BrugerViewModel();
 
@@ -48,6 +61,10 @@ namespace GeoTema.Views
                 if (LoginBrugernavn.Text.Length == 0 || LoginKode.Text.Length == 0) MessageBoxes.EmptyError();
                 else MessageBoxes.LoginError();
             }
+        }
+        private void Log_Ind_Click(object sender, RoutedEventArgs e)
+        {
+            Log_Ind();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)

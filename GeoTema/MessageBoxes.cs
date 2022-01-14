@@ -16,5 +16,9 @@ namespace GeoTema
         {
             MessageBox.Show("Alle felter skal udfyldes!", "Input fejl", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+        public static void NoSelectedID()
+        {
+            MessageBox.Show("Du skal klikke på en række i tabellen for at bruge denne funktion!","Input fejl", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 }

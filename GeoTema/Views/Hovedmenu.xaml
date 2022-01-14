@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="43"/>
             <RowDefinition/>
+            <RowDefinition Height="43"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid Margin="0,0,0,20">
@@ -26,19 +27,19 @@
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <Button Name="BrugerKnap" Content="Brugere" HorizontalAlignment="Left" Style="{DynamicResource blå}"/>
-                    <Button Name="BrugerKnapOff" Content="Brugere" HorizontalAlignment="Left" Style="{DynamicResource grå}"/>
+                    <Button Content="Brugere" Style="{StaticResource blå}" Click="BrugerKnap_Click"/>
+                    <Button Name="BrugerKnapOff" Content="Brugere" Style="{StaticResource grå}"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Button Content="Tilføj Data" HorizontalAlignment="Left" Style="{DynamicResource blå}"/>
-                    <Button Name="TilføjDataKnapOff" Content="Tilføj Data" HorizontalAlignment="Left" Style="{DynamicResource grå}"/>
+                    <Button Content="Tilføj Data" Style="{StaticResource blå}" Click="TilføjData_Click"/>
+                    <Button Name="TilføjDataKnapOff" Content="Tilføj Data" Style="{StaticResource grå}"/>
                 </Grid>
                 <Grid Grid.Column="2">
-                    <Button Content="Rediger Data" HorizontalAlignment="Left" Style="{DynamicResource blå}"/>
-                    <Button Name="RedigerDataKnapOff" Content="Rediger Data" HorizontalAlignment="Left" Style="{DynamicResource grå}"/>
+                    <Button Content="Rediger Data" HorizontalAlignment="Left" Style="{StaticResource blå}" Click="RedigerData_Click"/>
+                    <Button Name="RedigerDataKnapOff" Content="Rediger Data" HorizontalAlignment="Left" Style="{StaticResource grå}"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <TextBox Name="Searchbar" Style="{StaticResource Input}"/>
+                    <TextBox Name="Searchbar" Style="{StaticResource Input}" KeyDown="KeyHandler"/>
                 </Grid>
                 <Grid Grid.Column="4">
                     <Button Content="Søg" HorizontalAlignment="right" Style="{StaticResource grøn}" Click="Søg_Click"/>
@@ -46,7 +47,11 @@
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
-            <DataGrid x:Name="Tabel" FontSize="16" SelectionChanged="Tabel_SelectionChanged"/>
+            <DataGrid x:Name="Tabel" SelectionChanged="Tabel_SelectionChanged"/>
+        </Grid>
+        <Grid Grid.Row="2" Margin="0,20,0,0">
+            <Button Content="Log ud" Style="{StaticResource rød}" Click="Log_Ud"/>
+            <Button Content="Reload" HorizontalAlignment="Right" Style="{StaticResource blå}" Click="Reload"/>
         </Grid>
     </Grid>
 </Window>

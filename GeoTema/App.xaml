@@ -23,6 +23,8 @@
             </Setter>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
         </Style>
 
         <Style TargetType="Button" x:Key="rød">
@@ -44,6 +46,8 @@
             </Setter>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
         <Style TargetType="Button" x:Key="blå">
@@ -65,6 +69,8 @@
             </Setter>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
         <Style TargetType="Button" x:Key="grå">
@@ -86,11 +92,14 @@
             </Setter>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Visibility" Value="Hidden"/>
         </Style>
 
         <Style TargetType="Label">
             <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
         <Style TargetType="TextBox" x:Key="Input">
@@ -109,6 +118,7 @@
             <Setter Property="IsReadOnly" Value="True"/>
             <Setter Property="ColumnWidth" Value="*"/>
             <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <Style TargetType="DataGridColumnHeader">

@@ -18,15 +18,15 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Label Content="Brugernavn"/>
-            <TextBox Name="LoginBrugernavn" Text="admin" Style="{StaticResource Input}"/>
+            <TextBox Name="LoginBrugernavn" Text="admin" Style="{StaticResource Input}" KeyDown="KeyHandler1"/>
         </Grid>
         <Grid Grid.Row="1">
             <Label Content="Password"/>
-            <TextBox Name="LoginKode" Text="Passw0rd" Style="{StaticResource Input}"/>
+            <TextBox Name="LoginKode" Text="Passw0rd" Style="{StaticResource Input}" KeyDown="KeyHandler2"/>
         </Grid>
         <Grid Grid.Row="2">
             <Button Content="Exit" HorizontalAlignment="Left" Click="Exit_Click" Style="{StaticResource rød}"/>
-            <Button Content="Login" HorizontalAlignment="Right" Click="Login_Click" Style="{StaticResource grøn}"/>
+            <Button Content="Log ind" HorizontalAlignment="Right" Click="Log_Ind_Click" Style="{StaticResource grøn}"/>
         </Grid>
     </Grid>
 </Window>

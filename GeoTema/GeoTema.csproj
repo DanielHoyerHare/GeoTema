@@ -74,9 +74,16 @@
     <Compile Include="Helper.cs" />
     <Compile Include="MessageBoxes.cs" />
     <Compile Include="Models\BrugerModel.cs" />
-    <Compile Include="Models\LandModel.cs" />
+    <Compile Include="Models\DataGridModel.cs" />
+    <Compile Include="Models\DataContinentModel.cs" />
+    <Compile Include="Models\DataRankModel.cs" />
+    <Compile Include="Models\DataLandModel.cs" />
     <Compile Include="ViewModels\BrugerViewModel.cs" />
-    <Compile Include="ViewModels\LandViewModel.cs" />
+    <Compile Include="ViewModels\DataViewModel.cs" />
+    <Compile Include="ViewModels\DataGridViewModel.cs" />
+    <Compile Include="Views\AddData.xaml.cs">
+      <DependentUpon>AddData.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Hovedmenu.xaml.cs">
       <DependentUpon>Hovedmenu.xaml</DependentUpon>
     </Compile>
@@ -87,6 +94,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AddData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Hovedmenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GeoTema.Models;
+using GeoTema.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,9 +24,8 @@ namespace GeoTema.Views
     {
         private string Status { get; set; }
         private int SelectedID { get; set; }
-        private DataRowView SelectedData { get; set; }
-        List<Models.LandModel> Data = new List<Models.LandModel>();
-        ViewModels.LandViewModel datalist = new ViewModels.LandViewModel();
+        List<DataGridModel> Data = new List<DataGridModel>();
+        DataGridViewModel datalist = new DataGridViewModel();
         public Hovedmenu(string status)
         {
             InitializeComponent();
@@ -42,16 +43,16 @@ namespace GeoTema.Views
         }
         private void Refresh_Tabel(string input)
         {
+            Searchbar.Text = null;
             Data = datalist.GetDataTable(input);
-            var TableData = (from item in Data select new { ID = item.ID, Land = item.Land, Verdensdel = item.Verdensdel + "   " + item.Verdensdel2, Rang = item.Rang, Fødselsrate = item.Fødselsrate }).ToList();
-            Tabel.ItemsSource = TableData;
+            Tabel.ItemsSource = Data;
         }
         private void Tabel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SelectedData = (DataRowView)Tabel.SelectedItem;
-            if (SelectedData != null)
+            DataGridModel selecteddata = (DataGridModel)Tabel.SelectedItem;
+            if (selecteddata != null)
             {
-                SelectedID = Convert.ToInt32(SelectedData.Row[0].ToString());
+                SelectedID = Convert.ToInt32(selecteddata.ID.ToString());
             }
         }
         private void KeyHandler(object sender, KeyEventArgs e)
@@ -64,6 +65,39 @@ namespace GeoTema.Views
         private void Søg_Click(object sender, RoutedEventArgs e)
         {
             Refresh_Tabel(Searchbar.Text);
+        }
+
+        private void Log_Ud(object sender, RoutedEventArgs e)
+        {
+            Login p = new Login();
+            p.Show();
+            this.Close();
+        }
+        private void Reload(object sender, RoutedEventArgs e)
+        {
+            Refresh_Tabel(null);
+        }
+
+        private void BrugerKnap_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TilføjData_Click(object sender, RoutedEventArgs e)
+        {
+            AddData p = new AddData();
+            p.Show();
+        }
+        private void RedigerData_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch
+            {
+                MessageBoxes.NoSelectedID();
+            }
         }
     }
 }
