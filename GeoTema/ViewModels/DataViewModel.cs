@@ -22,7 +22,7 @@ namespace GeoTema.ViewModels
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.ConStr("Data")))
             {
-                connection.Query<Models.DataLandModel>("INSERT INTO country VALUES ('"+ Land +"','"+ Verdensdel + "');");
+                connection.Query<Models.DataLandModel>("INSERT INTO country VALUES ('" + Land + "','" + Verdensdel + "');");
                 int ID = GetID(Land);
                 if (ID != 0)
                 {
